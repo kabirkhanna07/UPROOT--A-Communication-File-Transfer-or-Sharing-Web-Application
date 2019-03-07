@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome to Mailer</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header><div id="header"><h1><center><b>Welcome to Mailer</b></center></h1></div></header>
+<hr><br>
+
+<div id="main">
+<div id="Reg">
+ <form action="RegisterServlet" method="post">
+<h2 style="background-color:Yellow;"><center>Register Here</center></h2>
+Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="name" placeholder="Enter Full Name"><br><br>
+Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="email" placeholder="login email"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;@mailer.com<br><br>
+Password : <input type="password" size="20" name="pass" placeholder="Enter Password"><br><br>
+Gender : &nbsp;&nbsp;&nbsp;&nbsp;Male<input type="radio" id="g1" name="gender" value="Male">Female<input type="radio" id="g2" name="gender" value="Female"><br><br>
+DOB : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="date" size="20" name="dob"><br><br>
+Address : &nbsp;&nbsp;<textarea rows="5" cols="15" name="address"></textarea><br><br>
+City : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="city" placeholder="Enter City Name"><br><br>
+State : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" size="20" name="state"placeholder="Enter State"><br><br>
+Country : &nbsp;&nbsp;&nbsp;<input type="text" size="20" name="country" placeholder="Country"><br><br>
+Contact : &nbsp;&nbsp;&nbsp;<input type="text" size="20" name="contact" placeholder="Contact No."><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="Register">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="reset" value="Clear">
+</form>
+</div><br>
+
+ 
+
+
+<div id="login">
+<form action="LoginServlet" method="post">
+<h2 style="background-color:red;"><center>Login</center></h2>
+Login ID : <input type="text" size="25" name="email"><br><br>
+Password : <input type="password" size="25" name="pass"><br><br>
+<input type="submit" value="Login">
+</form>
+</div>
+</div>
+
+</body>
+</html>

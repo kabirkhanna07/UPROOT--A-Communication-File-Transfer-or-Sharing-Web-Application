@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+body
+{
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+#particles-js
+{
+	height: 100%;
+	background: #804040;
+}
+#main{width:1200px;}
+#header{color:#B07645; font-family: "Lucida Console", Monaco, monospace;}
+#footer{text-align-last: center; color:#1B677E;}
+#Reg{height:570px; width:300px; background-color:#EAEAEA; padding:10px; float:left;}
+#login{height:180px; width:300px; background-color:#EAEAEA;padding:10px; float:right;}
+#l{height:180px; width:300px; background-color:#EAEAEA;padding:10px;}
