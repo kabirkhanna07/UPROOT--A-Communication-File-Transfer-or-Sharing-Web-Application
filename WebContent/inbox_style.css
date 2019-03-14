@@ -1,0 +1,143 @@
+@charset "ISO-8859-1";
+html,body{
+	background: url(54.jpg);
+	background-size: cover;
+	background-position: center;
+	max-width: 100%;
+    /*overflow-y: hidden;*/
+    overflow-x: hidden;
+    display: flex;
+	flex-direction: column;
+	margin: 0;
+	min-height: 100vh;
+}
+
+
+
+ a{
+	font-size: 1em;
+    color: #ebf9bf;
+	text-decoration: none;
+	font-weight: 500;
+	margin: 0 30px;
+	border-radius: 10px;
+	font-family: Trebuchet MS; 
+} 
+
+a:hover {
+	text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+	             0px 8px 13px rgba(0,0,0,0.1),
+	             0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#anchor{
+	text-align: center;
+	padding: 50px 0;
+}
+
+
+
+main {
+	display: flex;
+	flex-basis: 800px;
+}
+
+article {
+	flex-basis:25%;
+	background: #ffffff;
+	flex-grow: 3;
+	font-family: "Trebuchet MS";
+}
+
+nav {
+	flex-basis: 15%;
+	background-color: rgba(134, 161, 193, 0.9);
+	order: -1;
+	flex-grow: 1;
+}
+
+aside {
+	flex-basis: 55%;
+	flex-grow: 1;
+	 text-align: right;
+	font-family: Trebuchet MS;
+	font-size: 0.9em;
+}
+
+
+@media all and (max-width:  300px) {
+	
+	main {
+		flex-direction: column;
+		flex-grow: 1;
+	}
+	nav {
+		order: 0;
+	}
+}
+
+#inbox {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  color:#000000;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#inbox td, #inbox th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+#inbox tr:hover {background-color: #ddd;}
+#inbox td, #inbox tr a{
+	font-size: 1em;
+    color: #000000;
+	text-decoration: none;
+	font-weight: 500;
+	margin: 0 30px;
+	border-radius: 10px;
+	font-family: Trebuchet MS; 
+} 
+
+#inbox th {
+  padding-top: 6px;
+  padding-bottom: 6px;
+  text-align: left;
+  background-color: #4179e0;
+  color: white;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}

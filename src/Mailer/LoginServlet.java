@@ -61,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 		else
 		{
 			out.print("Invalid LoginID or Password");
-			request.getRequestDispatcher("login.html").include(request,response);
+			request.getRequestDispatcher("index.html").include(request,response);
 		}
 	
 	}

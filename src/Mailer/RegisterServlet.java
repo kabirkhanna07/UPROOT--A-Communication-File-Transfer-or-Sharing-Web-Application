@@ -33,12 +33,12 @@ public class RegisterServlet extends HttpServlet {
 		coun=request.getParameter("country");
 		co=request.getParameter("contact");
 		
-		int Status=RegisterDao.save(n,e+"@mailer.com",p,g,d,a,c,s,coun,co);
+		int Status=RegisterDao.save(n,e+"@uproot.com",p,g,d,a,c,s,coun,co);
 		
 		if(Status==1)
 		{
 			out.print("Sucessfully Registered");
-			request.getRequestDispatcher("login.html").include(request,response);
+			request.getRequestDispatcher("index.html").include(request,response);
 		}
 		else
 		{

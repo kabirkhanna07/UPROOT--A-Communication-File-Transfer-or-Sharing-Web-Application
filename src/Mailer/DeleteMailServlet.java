@@ -19,8 +19,9 @@ public class DeleteMailServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		request.getRequestDispatcher("header.html").include(request, response);
-		request.getRequestDispatcher("link.html").include(request, response);
+		//request.getRequestDispatcher("header.html").include(request, response);
+		out.print("<link rel='stylesheet' type='text/css' href='inbox_style.css'>");
+		
 		
 		HttpSession session=request.getSession(false);
 		if(session==null){
@@ -30,7 +31,7 @@ public class DeleteMailServlet extends HttpServlet {
 		else
 		{
 			String email=(String)session.getAttribute("email");
-			out.print("<span style='float:right'>Hi, "+email+"</span>");
+			//out.print("<span style='float:right'>Hi, "+email+"</span>");
 
 			int id=Integer.parseInt(request.getParameter("id"));
 			try
@@ -40,11 +41,20 @@ public class DeleteMailServlet extends HttpServlet {
 				ps.setString(1,"yes");
 				ps.setInt(2, id);
 				int i= ps.executeUpdate();
+				out.print("<main>");
+				out.print("<nav>");
+				request.getRequestDispatcher("link.html").include(request, response);
+				out.print("</nav>");
+				out.print("<article>");
 				if(i>0)
 				{
 					request.setAttribute("msg", "Mail Successfully Deleted");
 					request.getRequestDispatcher("InboxServlet").forward(request, response);
 				}
+				out.print("</article>");
+				out.print("<aside>");
+				out.print("</aside>");
+				out.print("</main>");
 			}
 			catch(Exception e)
 			{

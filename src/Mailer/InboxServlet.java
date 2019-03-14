@@ -18,16 +18,15 @@ public class InboxServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out=response.getWriter();
-		request.getRequestDispatcher("header.html").include(request, response);
-		request.getRequestDispatcher("link.html").include(request, response);
+		//request.getRequestDispatcher("header.html").include(request, response);
+		out.print("<link rel='stylesheet' type='text/css' href='inbox_style.css'>");
 		
 		HttpSession session=request.getSession(false);
 		if(session==null){
 			response.sendRedirect("index.html");
 		}else{
 			String email=(String)session.getAttribute("email");
-			out.print("<span style='float:right'>Hi, "+email+"</span>");
-			out.print("<center><h1>Inbox</h1></center>");
+		
 			String msg=(String)request.getAttribute("msg");
 			if(msg != null) {
 				out.println("<p>"+msg+"</p>");
@@ -38,13 +37,26 @@ public class InboxServlet extends HttpServlet {
 				PreparedStatement ps=con.prepareStatement("select * from Company_Mailer_Message where Reciver=? and Trash='no' order by MessageDate desc");
 				ps.setString(1,email);
 				ResultSet rs=ps.executeQuery();
-				out.print("<center><table border='1' style='width:700px;'>");
-				out.print("<tr style='background-color:grey;color:white'><td>Sender</td><td>Subject</td></tr>");
+				out.print("<main>");
+				out.print("<nav>");
+				out.print("<img src='logo1.png' width='33' height='30'> ");
+				out.print("<img src='up.png' width='56' height='16'>");
+				request.getRequestDispatcher("link.html").include(request, response);			
+				out.print("</nav>");
+				out.print("<article>");
+				out.print("<h1>Inbox</h1>");			
+				out.print("<table id='inbox'>");
+				out.print("<th>Sender</th> <th>Subject</th>");
 				while(rs.next())
 				{
 					out.print("<tr><td>"+rs.getString("Sender")+"</td><td><a href='ViewMailServlet?id="+rs.getString("id")+"'>"+rs.getString("Subject")+"</a></td></tr>");
 				}
-				out.print("</table></center>");
+				out.print("</table>");
+				out.print("</article>");
+				out.print("<aside>");
+				out.print("Welcome, "+email);
+				out.print("</aside>");
+				out.print("</main>");
 				
 				con.close();
 			}
